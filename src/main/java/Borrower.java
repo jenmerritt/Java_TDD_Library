@@ -15,4 +15,13 @@ public class Borrower {
     public void addBook(Book book) {
         this.collection.add(book);
     }
+
+    public void loanBookFromLibrary(Library library){
+        Book bookToLoan = library.loanOutBook();
+        if(bookToLoan != null){
+            this.addBook(bookToLoan);
+        }
+
+
+    }
 }

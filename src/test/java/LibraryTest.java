@@ -39,4 +39,18 @@ public class LibraryTest {
         assertEquals(2, library.getNumberOfBooks());
     }
 
+    @Test
+    public void remove_book_if_stock(){
+        library.addBook(book1);
+        library.addBook(book2);
+        library.loanOutBook();
+        assertEquals(1, library.getNumberOfBooks());
+    }
+
+    @Test
+    public void do_not_remove_book_if_no_stock(){
+        library.loanOutBook();
+        assertEquals(0, library.getNumberOfBooks());
+    }
+
 }
